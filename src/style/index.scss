@@ -1,0 +1,152 @@
+.sidebar{
+   width: 5.5555%; 
+   height: 100%;
+   background-color:#283046;;
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   li{
+        width: 100%;
+        height: 7.74444%;
+        a{  
+            font-family: 'Montserrat';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            text-decoration: none;
+            min-width: 100%;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            gap: 11px;
+            color: #BDBDBD;
+            .icon{
+                width: 40%;
+                height: 32px;
+               
+            }
+            span{
+                display: none;
+            }
+        }
+    }
+   
+}
+
+li:hover{
+    background: #9E8CFC;
+    box-shadow: 0px 0px 20px rgba(158, 140, 252, 0.7);
+}
+
+li:hover a{
+    color: #FFFFFF;
+    fill: #FFFFFF;
+}
+
+.sidebar:hover{
+    width: 7.6333%; 
+    height: 100%;
+    background-color:#283046;
+    z-index: 2;
+    
+ }
+
+ .sidebar:hover .text_icon{
+    display: inline-block;
+
+ }
+
+body{
+    display: flex;
+    gap: 11px;
+    justify-content: space-between;
+    background-color:#161D31;
+    position: relative;
+    box-sizing:border-box;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-block-start: 30px;
+    margin-left: 110px;
+    width: 91.597%;
+    height: 100vh;
+    .header{
+        width:81.25%;
+        min-height: 80px;
+        background-color: #283046;;
+        align-self:center;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .start-icon{
+            display: flex;
+            gap: 20px;
+            padding-inline-start: 20px;
+            li{
+                width: 26px;
+                 height: 26px;
+                a{
+                    width: 26px;
+                    height: 26px;
+                    .icon-header{
+                        width: 26px;
+                        height: 26px;
+                    }
+                }
+            }
+        }
+        .end-icon{
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+            padding-inline-end: 20px;
+            .avatar{
+                a{
+                    svg{
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+            }
+            .lang{
+                a{
+                    svg{
+                        width: 120px;
+                        height: 26px;
+                    }
+                }
+            }
+            .tools{
+                ul{
+                    display: flex;
+                    gap: 20px;
+                    li{
+                        a{
+                         svg{
+                            width: 26px;
+                            height: 26px;
+                         }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .image{
+        align-self:center;
+        width:91.25%;
+        height: 74.68%;
+        background-image: url(/src/image/bg-dark.png);
+        background-position:center;
+        background-repeat:no-repeat;
+        background-size:100% 100%;
+    }
+}
