@@ -1,3 +1,7 @@
+:root{
+    transition: all 1s ease-out;
+}
+
 .sidebar{
    width: 5.5555%; 
    height: 100%;
@@ -26,9 +30,9 @@
             .icon{
                 width: 40%;
                 height: 32px;
-               
+                fill: #BDBDBD;
             }
-            span{
+            .text_icon{
                 display: none;
             }
         }
@@ -36,13 +40,17 @@
    
 }
 
-li:hover{
+.sidebar li:hover{
     background: #9E8CFC;
     box-shadow: 0px 0px 20px rgba(158, 140, 252, 0.7);
 }
 
-li:hover a{
+.sidebar li:hover a{
     color: #FFFFFF;
+    fill: #FFFFFF;
+}
+
+.sidebar li:hover a .icon use{
     fill: #FFFFFF;
 }
 
@@ -58,7 +66,46 @@ li:hover a{
     display: inline-block;
 
  }
+ .sidebar .with-pointer{
+    position: relative;
+ }
+.sidebar .with-pointer::after{
+    content:"";
+    background-image: url(../image/sidebar-pointer.svg);
+    text-align: center;
+    color: #BDBDBD;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    right: -10px;
+}
+.email{
+    position: relative;
+    z-index: 1;
+}
 
+.email::before{
+    content:"";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 40%;
+    left: 70%;
+    z-index: 5;
+    background-image: url(../image/badge25.svg);
+    // border-radius:50%;
+    // background-color:#6FCF97;
+    // color: #4F4F4F;
+    // box-sizing:border-box;
+    // text-align: center;
+    // vertical-align:baseline;
+}
+
+
+.sidebar:hover .with-pointer::after{
+   transform: rotate(-180deg);
+}
 body{
     display: flex;
     gap: 11px;
@@ -81,11 +128,13 @@ body{
     .header{
         width:81.25%;
         min-height: 80px;
-        background-color: #283046;;
         align-self:center;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background: #283046;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
         .start-icon{
             display: flex;
             gap: 20px;
@@ -99,6 +148,7 @@ body{
                     .icon-header{
                         width: 26px;
                         height: 26px;
+                        fill: #BDBDBD;
                     }
                 }
             }
@@ -106,21 +156,24 @@ body{
         .end-icon{
             display: flex;
             justify-content: space-between;
+            align-items: center;
             gap: 60px;
             padding-inline-end: 20px;
             .avatar{
                 a{
-                    svg{
+                    .icon-header{
                         width: 36px;
                         height: 36px;
+                        fill: #BDBDBD;
                     }
                 }
             }
             .lang{
                 a{
-                    svg{
+                    .icon-header{
                         width: 120px;
                         height: 26px;
+                        fill: #BDBDBD;
                     }
                 }
             }
@@ -130,9 +183,10 @@ body{
                     gap: 20px;
                     li{
                         a{
-                         svg{
+                         .icon-header{
                             width: 26px;
                             height: 26px;
+                            fill: #BDBDBD;
                          }
                         }
                     }
@@ -149,4 +203,26 @@ body{
         background-repeat:no-repeat;
         background-size:100% 100%;
     }
+}
+.icon-header:hover use{
+    fill: #f1f1f1;
+}
+
+
+
+@media screen  and (max-width:1440px){
+    .sidebar{
+        width: 10%;
+    }
+    .sidebar:hover{
+        width: 15%;
+     }
+     .header{
+        width:85%;
+    }
+}
+
+
+@media screen  and (max-width:820px){
+   
 }

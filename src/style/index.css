@@ -1,3 +1,7 @@
+:root {
+  transition: all 1s ease-out;
+}
+
 .sidebar {
   width: 5.5555%;
   height: 100%;
@@ -29,18 +33,23 @@
 .sidebar li a .icon {
   width: 40%;
   height: 32px;
+  fill: #BDBDBD;
 }
-.sidebar li a span {
+.sidebar li a .text_icon {
   display: none;
 }
 
-li:hover {
+.sidebar li:hover {
   background: #9E8CFC;
   box-shadow: 0px 0px 20px rgba(158, 140, 252, 0.7);
 }
 
-li:hover a {
+.sidebar li:hover a {
   color: #FFFFFF;
+  fill: #FFFFFF;
+}
+
+.sidebar li:hover a .icon use {
   fill: #FFFFFF;
 }
 
@@ -53,6 +62,42 @@ li:hover a {
 
 .sidebar:hover .text_icon {
   display: inline-block;
+}
+
+.sidebar .with-pointer {
+  position: relative;
+}
+
+.sidebar .with-pointer::after {
+  content: "";
+  background-image: url(../image/sidebar-pointer.svg);
+  text-align: center;
+  color: #BDBDBD;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  right: -10px;
+}
+
+.email {
+  position: relative;
+  z-index: 1;
+}
+
+.email::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 40%;
+  left: 70%;
+  z-index: 5;
+  background-image: url(../image/badge25.svg);
+}
+
+.sidebar:hover .with-pointer::after {
+  transform: rotate(-180deg);
 }
 
 body {
@@ -78,11 +123,13 @@ body {
 .main .header {
   width: 81.25%;
   min-height: 80px;
-  background-color: #283046;
   align-self: center;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: #283046;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
 }
 .main .header .start-icon {
   display: flex;
@@ -100,28 +147,33 @@ body {
 .main .header .start-icon li a .icon-header {
   width: 26px;
   height: 26px;
+  fill: #BDBDBD;
 }
 .main .header .end-icon {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 60px;
   padding-inline-end: 20px;
 }
-.main .header .end-icon .avatar a svg {
+.main .header .end-icon .avatar a .icon-header {
   width: 36px;
   height: 36px;
+  fill: #BDBDBD;
 }
-.main .header .end-icon .lang a svg {
+.main .header .end-icon .lang a .icon-header {
   width: 120px;
   height: 26px;
+  fill: #BDBDBD;
 }
 .main .header .end-icon .tools ul {
   display: flex;
   gap: 20px;
 }
-.main .header .end-icon .tools ul li a svg {
+.main .header .end-icon .tools ul li a .icon-header {
   width: 26px;
   height: 26px;
+  fill: #BDBDBD;
 }
 .main .image {
   align-self: center;
@@ -131,6 +183,22 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+.icon-header:hover use {
+  fill: #f1f1f1;
+}
+
+@media screen and (max-width: 1440px) {
+  .sidebar {
+    width: 10%;
+  }
+  .sidebar:hover {
+    width: 15%;
+  }
+  .header {
+    width: 85%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
