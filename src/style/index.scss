@@ -72,6 +72,8 @@
 .sidebar .with-pointer::after{
     content:"";
     background-image: url(../image/sidebar-pointer.svg);
+    background-color: #283046;
+    border-radius: 10px;
     text-align: center;
     color: #BDBDBD;
     position: absolute;
